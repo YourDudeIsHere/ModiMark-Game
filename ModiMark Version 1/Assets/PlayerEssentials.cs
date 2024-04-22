@@ -25,8 +25,9 @@ public class Player : MonoBehaviour
     private Animator playerAnimation;
     // Start is called before the first frame update.
     public UIController healthbar;
-    float health = UIController.health;
-
+    public UIController border;
+    public bool reset;
+    
     void Start()
 
     {
@@ -42,10 +43,22 @@ public class Player : MonoBehaviour
 
     void Update()
 
-    { if (health < 0.5f)
+    { 
+       
+        #region Health
+
+        border.health=healthbar.health;
+        if (healthbar.health < -0.1f)
         {
-            health -= 1f;
+            reset = true;
         }
+        #endregion
+        
+        if (reset)
+        {
+            Respawn();
+        }
+        
 
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
         // Makes a circle to detect if a player is touching the ground
@@ -109,7 +122,7 @@ public class Player : MonoBehaviour
 
         {
 
-            transform.position = respawnPoint;
+            Respawn();
 
         }
 
@@ -140,21 +153,16 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Damage")
         {
-            healthbar.Damage(0.001f);
-            health -= (0.001f);
-            Debug.Log("The health you have currently is"+health);
-            Debug.Log("The Healthbar is at" + healthbar);
-            if (health < 0f)
-            {
-                print("im a dumb piece of shit");
-                transform.position = respawnPoint;
-                health = 1f;
-                healthbar.Damage(-1f);
-            }
-
-
+            healthbar.health -= (0.001f);
         }
 
 
+    }
+
+    private void Respawn()
+    {
+        transform.position = respawnPoint;
+        healthbar.health = 1f;
+        reset = false;
     }
 }

@@ -2158,6 +2158,8 @@ MonoBehaviour:
     m_Bits: 8
   fallDetector: {fileID: 1522493258}
   healthbar: {fileID: 1961469336}
+  border: {fileID: 349848984}
+  reset: 0
 --- !u!61 &321949284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2442,6 +2444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9b74cc547b26d49b3ac565f35f6ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   spriterenderer: {fileID: 0}
   HealthBar_Full: {fileID: -1953662968, guid: 2bfbd2493d120c14db6223c2c1df9bc1, type: 3}
   Bar_Full: {fileID: 0}
@@ -6173,6 +6176,8 @@ MonoBehaviour:
     m_Bits: 8
   fallDetector: {fileID: 0}
   healthbar: {fileID: 0}
+  border: {fileID: 0}
+  reset: 0
 --- !u!61 &1363586173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7552,6 +7557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9b74cc547b26d49b3ac565f35f6ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   spriterenderer: {fileID: 0}
   HealthBar_Full: {fileID: -1953662968, guid: 2bfbd2493d120c14db6223c2c1df9bc1, type: 3}
   Bar_Full: {fileID: 21300000, guid: 6f8af08301f98bd42b1d2c33a860d925, type: 3}

@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
-    public static float health = 1f;
+    public float health;
+ 
 
     public SpriteRenderer spriterenderer;
     public Sprite HealthBar_Full;
@@ -26,25 +27,23 @@ public class UIController : MonoBehaviour
     {
         Player _Player = FindObjectOfType<Player>();
         borderimage = GetComponent<Image>();
-        
-          
         barimage = GetComponent<Image>();
 
-        if (health < 0.4)
-        {
-            barimage.color = Color.red;
-        }
-        
+        health = barimage.fillAmount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetSize(health);
+        barimage.fillAmount = health;
 
-        if (gameObject.name == "Border")
+        switch (gameObject.name)
         {
-            if (health < 1f && health > 0.8f)
+            case "Border":
+
+            Debug.Log(health);
+
+            if (health < 1f && health > 0.8f) 
             {
                 GetComponent<Image>().sprite = HealthBar_Full;
             }
@@ -54,7 +53,7 @@ public class UIController : MonoBehaviour
             }
             if (health < 0.6f && health > 0.5f)
             {
-                GetComponent<Image>().sprite = HealthBar_2;
+                GetComponent<Image>().sprite = HealthBar_2; 
             }
             if (health < 0.5f && health > 0.3f)
             {
@@ -62,16 +61,18 @@ public class UIController : MonoBehaviour
             }
             if (health < 0.3f && health > 0f)
             {
-                GetComponent<Image>().sprite = HealthBar_4;
+                GetComponent <Image>().sprite = HealthBar_4;
             }
-        }
-        if (gameObject.name == "Bar")
-        {   
-            if(health < 1f && 0.8f > health)
+            break;
+
+            case "Bar":
+
+
+            if (health < 1f && health > 0.8f) 
             {
                 GetComponent<Image>().sprite = Bar_Full;
             }
-            if(health <0.8f && health > 0.6f)
+            if (health < 0.8f && health > 0.6f)
             {
                 GetComponent<Image>().sprite = Bar_1;
             }
@@ -79,7 +80,7 @@ public class UIController : MonoBehaviour
             {
                 GetComponent<Image>().sprite = Bar_2; 
             }
-            if(health < 0.5f && health > 0.3f)
+            if (health < 0.5f && health > 0.3f)
             {
                 GetComponent<Image>().sprite = Bar_3;
             }
@@ -87,23 +88,12 @@ public class UIController : MonoBehaviour
             {
                 GetComponent <Image>().sprite = Bar_4;
             }
+            break;
+                          
         }
     }
-    public void SetSize (float size)
-    {
-        barimage.fillAmount = size;
-    }
-    public void Damage(float damage)
-    {
-        if((health-=damage)>= 0f)
-        {
-            health -= damage;
-            if (health == 0f)
-            {
-                
-            }
-        } 
-    }
+
+
   
 }
 
