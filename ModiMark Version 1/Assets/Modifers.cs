@@ -48,7 +48,7 @@ public class Modifers : MonoBehaviour
         //Player move jump half of their normale height
         else if (randomNumber == 2)
         {
-            _Player.jumpspeed = 6f;
+            _Player.jumpspeed = 6.7f;
            print("Half the jump height");
             anim.Play("HalfJumpPower");
         }

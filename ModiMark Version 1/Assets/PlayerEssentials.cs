@@ -24,13 +24,16 @@ public class Player : MonoBehaviour
     // Allows the fall detector to be attatched to an object
     private Animator playerAnimation;
     // Start is called before the first frame update.
+   // Everything underneath i use for referencing anything from the UI controller script
     public UIController healthbar;
     public UIController border;
     public bool reset;
     public UIController barimage;
     public UIController borderimage;
+    // The gameobjects 
     public GameObject Border;
     public GameObject Bar;
+    //
     public Sprite HealthBar_Full;
     public Sprite Bar_Full;
 
@@ -162,12 +165,12 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Damage")
         {
-            healthbar.health -= (0.001f);
+            healthbar.health -= (0.003f);
         }
 
 
     }
-
+    //This method underneath resets everything needed
     private void Respawn()
     {
         transform.position = respawnPoint;
