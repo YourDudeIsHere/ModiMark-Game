@@ -27,6 +27,13 @@ public class Player : MonoBehaviour
     public UIController healthbar;
     public UIController border;
     public bool reset;
+    public UIController barimage;
+    public UIController borderimage;
+    public GameObject Border;
+    public GameObject Bar;
+    public Sprite HealthBar_Full;
+    public Sprite Bar_Full;
+
     
     void Start()
 
@@ -57,6 +64,8 @@ public class Player : MonoBehaviour
         if (reset)
         {
             Respawn();
+            
+            
         }
         
 
@@ -163,6 +172,8 @@ public class Player : MonoBehaviour
     {
         transform.position = respawnPoint;
         healthbar.health = 1f;
+        Border.GetComponent<Image>().sprite = HealthBar_Full;
+        Bar.GetComponent<Image>().sprite = Bar_Full;
         reset = false;
     }
 }
