@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     // Public can be seen in the Inspector
-    // Character speed and jump speed
+    // ThisCharacter speed and jump speed
     public float speed = 5f;
     public float jumpspeed = 8f;
     // The direction the character is moving (+ for ->) (- for <-)
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     // The gameobjects 
     public GameObject Border;
     public GameObject Bar;
-    //
+    //This changes the healthborder and the bar used for health via sprites
     public Sprite HealthBar_Full;
     public Sprite Bar_Full;
 
@@ -70,8 +70,8 @@ public class Player : MonoBehaviour
             
             
         }
-        
 
+        #region Movement/Falling
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
         // Makes a circle to detect if a player is touching the ground
         //isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -123,9 +123,9 @@ public class Player : MonoBehaviour
         }
 
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
-
+        #endregion
     }
-
+    #region Tags/Methods
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
@@ -165,7 +165,7 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Damage")
         {
-            healthbar.health -= (0.003f);
+            healthbar.health -= (0.002f);
         }
 
 
@@ -180,3 +180,4 @@ public class Player : MonoBehaviour
         reset = false;
     }
 }
+#endregion
