@@ -3,7 +3,9 @@ guid: 25aaaf24504f2974b8ce17fed75f3d6c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Play: {instanceID: 0}
+  - PlayButton: {fileID: 7400000, guid: db9eff62cbecb134e83972c4fdedabfb, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
