@@ -8,12 +8,14 @@ public class UIController : MonoBehaviour
  
 
     public SpriteRenderer spriterenderer;
+    //The sprites used for the borders of the healthbar
     public Sprite HealthBar_Full;
-    public Sprite Bar_Full;
     public Sprite HealthBar_1;
     public Sprite HealthBar_2;
     public Sprite HealthBar_3;
     public Sprite HealthBar_4;
+    //The bar within the health border
+    public Sprite Bar_Full;
     public Sprite Bar_1;
     public Sprite Bar_2;
     public Sprite Bar_3;
