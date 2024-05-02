@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     // The starting position of the character
     public GameObject fallDetector;
     // Allows the fall detector to be attatched to an object
-    private Animator playerAnimation;
+    public Animator playerAnimation;
     // Start is called before the first frame update.
    // Everything underneath i use for referencing anything from the UI controller script
     public UIController healthbar;
@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
         // Makes a circle to detect if a player is touching the ground
         //isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        
         direction = Input.GetAxis("Horizontal");
         if (direction > 0f)
 
