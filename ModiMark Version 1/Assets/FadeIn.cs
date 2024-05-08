@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FadeIn : MonoBehaviour
 {
+    //THIS SCRIPT IS USELESS, IGNORE
     public AnimationClip Fade;
     // Start is called before the first frame update
     void Start()

@@ -15,11 +15,14 @@ public class Menu : MonoBehaviour
     public Button PlayButton; 
     public void PlayPushed()
     {
+        //every statement with setactive false makes buttons disappear allowing for the buttons
+        //to stay hidden.
         Play.SetActive(false);
         Option.SetActive(false);
         Quit.SetActive(false);  
         anim.Play("MenuAnim");
     }
+    //Method below is used to seamlessy load into the next level from the menu
     public void FadeEvent()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

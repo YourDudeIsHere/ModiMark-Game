@@ -48,15 +48,15 @@ public class Modifers : MonoBehaviour
         //Player move jump half of their normale height
         else if (randomNumber == 2)
         {
-            _Player.jumpspeed = 6.7f;
+            _Player.jumpspeed = 8f;
            print("Half the jump height");
             anim.Play("HalfJumpPower");
         }
         //Player goes a bit faster than normal (5 is the normal value)
         else if (randomNumber == 3)
         {
-            _Player.speed = 15f;
-            print("Triple speed");
+            _Player.speed = 9f;
+            print("double speed");
         }
 
             

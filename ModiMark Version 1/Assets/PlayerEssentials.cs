@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Unity.Collections.Unicode;
 
 public class Player : MonoBehaviour
 {
     // Public can be seen in the Inspector
     // ThisCharacter speed and jump speed
     public float speed = 5f;
-    public float jumpspeed = 8f;
+    public float jumpspeed = 12f;
     // The direction the character is moving (+ for ->) (- for <-)
     private float direction = 0f;
     private Rigidbody2D player;
@@ -46,14 +47,17 @@ public class Player : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
         respawnPoint = transform.position;
-
+       playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
     }
 
     // Update is called once per frame
 
     void Update()
 
-    { 
+    {
+
+
+    
        
         #region Health
 
@@ -75,7 +79,7 @@ public class Player : MonoBehaviour
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
         // Makes a circle to detect if a player is touching the ground
         //isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        
+
         direction = Input.GetAxis("Horizontal");
         if (direction > 0f)
 
@@ -166,7 +170,7 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Damage")
         {
-            healthbar.health -= (0.002f);
+            healthbar.health -= (0.004f);
         }
 
 
