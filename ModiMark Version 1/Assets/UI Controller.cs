@@ -43,7 +43,7 @@ public class UIController : MonoBehaviour
         {
             case "Border":
 
-            Debug.Log(health);
+           
 
             if (health < 1f && health > 0.8f) 
             {

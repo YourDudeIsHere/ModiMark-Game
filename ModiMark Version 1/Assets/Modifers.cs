@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 
 public class Modifers : MonoBehaviour
 {
+    public AnimationClip DoubleSpeed;
     public Sprite invisible;
     public Image mod;
     public Animator anim;
@@ -37,6 +38,7 @@ public class Modifers : MonoBehaviour
         //Needed to reference variables from my Player script
         Player _Player = FindObjectOfType<Player>();
 
+        print(randomNumber);
         //Slows player down by half
         if (randomNumber == 1)
         {
@@ -57,6 +59,8 @@ public class Modifers : MonoBehaviour
         {
             _Player.speed = 9f;
             print("Double speed");
+            anim.Play("DoubleSpeed");
+            UnityEngine.Debug.Log(anim);
         }
 
             

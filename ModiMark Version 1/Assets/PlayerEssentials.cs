@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -90,7 +91,7 @@ public class Player : MonoBehaviour
 
             player.velocity = new Vector2(direction * speed, player.velocity.y);
 
-            transform.localScale = new Vector2(1f, 1f);
+            transform.localScale = new Vector2(0.85f, 0.87f);
 
         }
 
@@ -102,7 +103,7 @@ public class Player : MonoBehaviour
 
             player.velocity = new Vector2(direction * speed, player.velocity.y);
 
-            transform.localScale = new Vector2(-1f, 1f);
+            transform.localScale = new Vector2(-0.85f, 0.87f);
 
         }
 
@@ -171,9 +172,12 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Damage")
         {
-            healthbar.health -= (0.004f);
+            healthbar.health -= (0.009f);
         }
-
+        else if (collision.tag == "NextLevel")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
 
     }
     //This method underneath resets everything needed
@@ -185,5 +189,7 @@ public class Player : MonoBehaviour
         Bar.GetComponent<Image>().sprite = Bar_Full;
         reset = false;
     }
+    
 }
+
 #endregion
