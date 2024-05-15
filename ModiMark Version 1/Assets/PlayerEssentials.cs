@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
 
         #region Movement/Falling
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
+        playerAnimation.SetBool("OnGround", isTouchingGround);
         // Makes a circle to detect if a player is touching the ground
         //isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 

@@ -56,7 +56,7 @@ public class Modifers : MonoBehaviour
         else if (randomNumber == 3)
         {
             _Player.speed = 9f;
-            print("double speed");
+            print("Double speed");
         }
 
             
