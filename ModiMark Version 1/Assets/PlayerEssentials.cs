@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
 {
     // Public can be seen in the Inspector
     // ThisCharacter speed and jump speed
-    public float speed = 5f;
-    public float jumpspeed = 12f;
+    public float speed = 8.5f;
+    public float jumpspeed = 10f;
     // The direction the character is moving (+ for ->) (- for <-)
     private float direction = 0f;
     private Rigidbody2D player;
@@ -176,7 +176,11 @@ public class Player : MonoBehaviour
         }
         else if (collision.tag == "NextLevel")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (collision.tag == "End")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         }
 
     }
