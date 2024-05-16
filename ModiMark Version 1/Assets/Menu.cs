@@ -22,6 +22,11 @@ public class Menu : MonoBehaviour
         Quit.SetActive(false);  
         anim.Play("MenuAnim");
     }
+
+    public void QuitPushed()
+    {
+        Application.Quit();
+    }
     //Method below is used to seamlessy load into the next level from the menu
     public void FadeEvent()
     {
