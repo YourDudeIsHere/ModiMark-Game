@@ -1269,6 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c232195de89784fbe564c05c2fd94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoubleSpeed: {fileID: 0}
   invisible: {fileID: 21300000, guid: bc823341b3a3e054ca34217584fca97b, type: 3}
   anim: {fileID: 161079463}
 --- !u!1 &181525751
@@ -3051,6 +3052,7 @@ MonoBehaviour:
   Bar: {fileID: 1961469332}
   HealthBar_Full: {fileID: -1953662968, guid: 2bfbd2493d120c14db6223c2c1df9bc1, type: 3}
   Bar_Full: {fileID: 21300000, guid: 6f8af08301f98bd42b1d2c33a860d925, type: 3}
+  groundcheck: {fileID: 1814669673}
 --- !u!61 &321949284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9832,6 +9834,7 @@ MonoBehaviour:
   Bar: {fileID: 0}
   HealthBar_Full: {fileID: 0}
   Bar_Full: {fileID: 0}
+  groundcheck: {fileID: 0}
 --- !u!61 &1363586173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15630,6 +15633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814669672}
   - component: {fileID: 1814669671}
+  - component: {fileID: 1814669673}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -15669,7 +15673,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.007967189, y: -1.7436805}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -15680,7 +15684,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6334977, y: 0.283844}
   m_EdgeRadius: 0
 --- !u!4 &1814669672
 Transform:
@@ -15691,12 +15695,25 @@ Transform:
   m_GameObject: {fileID: 1814669670}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.009999275, y: -0.020000458, z: -0.004803419}
+  m_LocalPosition: {x: -0.009999275, y: -0.037, z: -0.004803419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 321949281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814669673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814669670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412c58c9e74a0984495d33395bb049b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouchingGround: 0
 --- !u!1 &1827601279
 GameObject:
   m_ObjectHideFlags: 0
