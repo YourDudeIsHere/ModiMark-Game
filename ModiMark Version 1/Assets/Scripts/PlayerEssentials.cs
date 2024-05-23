@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     //This changes the healthborder and the bar used for health via sprites
     public Sprite HealthBar_Full;
     public Sprite Bar_Full;
+    public GroundCheck groundcheck;
 
     
     void Start()
@@ -56,9 +58,8 @@ public class Player : MonoBehaviour
     void Update()
 
     {
-
-
-    
+        isTouchingGround = groundcheck.isTouchingGround;
+        
        
         #region Health
 
@@ -147,7 +148,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
 
     {
 
