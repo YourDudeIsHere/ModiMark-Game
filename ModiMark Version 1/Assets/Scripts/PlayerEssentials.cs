@@ -1,8 +1,4 @@
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,7 +41,8 @@ public class Player : MonoBehaviour
     void Start()
 
     {
-         
+        print(speed);
+        print(jumpspeed);
         // Ensures that only the RigidBody2D component is looked at
         player = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
